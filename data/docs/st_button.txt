@@ -1,0 +1,156 @@
+st.button - Streamlit Docs
+
+Search
+
+Get started
+
+Develop
+
+Deploy
+
+Knowledge base
+
+Display a button widget.
+
+st.button(label, key=None, help=None, on_click=None, args=None, kwargs=None, *, type="secondary", icon=None, icon_position="left", disabled=False, use_container_width=None, width="content", shortcut=None)
+
+label(str)
+
+A short label explaining to the user what this button is for.
+The label can optionally contain GitHub-flavored Markdown of the
+following types: Bold, Italics, Strikethroughs, Inline Code, Links,
+and Images. Images display like icons, with a max height equal to
+the font height.
+
+Unsupported Markdown elements are unwrapped so only their children
+(text contents) render. Common block-level Markdown (headings,
+lists, blockquotes) is automatically escaped and displays as
+literal text in labels.
+
+See thebodyparameter ofst.markdownfor additional,
+supported Markdown directives.
+
+key(str, int, or None)
+
+An optional string or integer to use as the unique key for
+the widget. If this isNone(default), a key will be
+generated for the widget based on the values of the other
+parameters. No two widgets may have the same key. Assigning
+a key stabilizes the widget's identity and preserves its
+state across reruns even when other parameters change.
+
+A key lets you access the widget's value viast.session_state[key](read-only). For more details, seeWidget behavior.
+
+Additionally, ifkeyis provided, it will be used as a
+CSS class name prefixed withst-key-.
+
+help(str or None)
+
+A tooltip that gets displayed when the button is hovered over. If
+this isNone(default), no tooltip is displayed.
+
+The tooltip can optionally contain GitHub-flavored Markdown,
+including the Markdown directives described in thebodyparameter ofst.markdown.
+
+on_click(callable)
+
+An optional callback invoked when this button is clicked.
+
+args(list or tuple)
+
+An optional list or tuple of args to pass to the callback.
+
+kwargs(dict)
+
+An optional dict of kwargs to pass to the callback.
+
+type("primary", "secondary", or "tertiary")
+
+An optional string that specifies the button type. This can be one
+of the following:
+
+icon(str or None)
+
+An optional emoji or icon to display next to the button label. IficonisNone(default), no icon is displayed. Ificonis a
+string, the following options are valid:
+
+A single-character emoji. For example, you can seticon="🚨"oricon="🔥". Emoji short codes are not supported.
+
+An icon from the Material Symbols library (rounded style) in the
+format":material/icon_name:"where "icon_name" is the name
+of the icon in snake case.
+
+For example,icon=":material/thumb_up:"will display the
+Thumb Up icon. Find additional icons in theMaterial Symbolsfont library.
+
+"spinner": Displays a spinner as an icon.
+
+icon_position("left" or "right")
+
+The position of the icon relative to the button label. This
+defaults to"left".
+
+disabled(bool)
+
+An optional boolean that disables the button if set toTrue.
+The default isFalse.
+
+use_container_width(bool)
+
+use_container_widthis deprecated and will be removed in a
+future release. Foruse_container_width=True, usewidth="stretch". Foruse_container_width=False, usewidth="content".
+
+Whether to expand the button's width to fill its parent container.
+Ifuse_container_widthisFalse(default), Streamlit sizes
+the button to fit its contents. Ifuse_container_widthisTrue, the width of the button matches its parent container.
+
+In both cases, if the contents of the button are wider than the
+parent container, the contents will line wrap.
+
+width("content", "stretch", or int)
+
+The width of the button. This can be one of the following:
+
+shortcut(str or None)
+
+An optional keyboard shortcut that triggers the button. This can be
+one of the following strings:
+
+Important
+
+The keys"C"and"R"are reserved and can't be used,
+even with modifiers. Punctuation keys like"."and","aren't currently supported. Some combinations such as"Ctrl+T","Ctrl+W","Ctrl+PageUp","Ctrl+PageDown", and"F11"are reserved by the browser
+or operating system and may never reach Streamlit.
+
+The following special keys are supported: Backspace, Delete, Down,
+End, Enter, Esc, Home, Left, PageDown, PageUp, Right, Space, Tab,
+and Up.
+
+The following modifiers are supported: Alt, Ctrl, Cmd, Meta, Mod,
+Option, Shift.
+
+(bool)
+
+True if the button was clicked on the last run of the app,
+False otherwise.
+
+Example 1: Customize your button type
+
+Example 2: Add icons to your button
+
+Although you can add icons to your buttons through Markdown, theiconparameter is a convenient and consistent alternative.
+
+Example 3: Use keyboard shortcuts
+
+The following example shows how to use keyboard shortcuts to trigger a
+button. If you use any of the platform-dependent modifiers (Ctrl, Cmd,
+or Mod), they are interpreted interchangeably and always displayed to
+the user to match their platform.
+
+Although a button is the simplest of input widgets, it's very common for buttons to be deeply tied to the use ofst.session_state. Check out our advanced guide onButton behavior and examples.
+
+Check out our video on how to use one of Streamlit's core functions, the button!
+
+In the video below, we'll take it a step further and learn how to combine abutton,checkboxandradio button!
+
+Ourforumsare full of helpful information and Streamlit experts.
