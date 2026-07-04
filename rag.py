@@ -2,7 +2,9 @@ import time
 import chromadb
 from chromadb.utils import embedding_functions
 from google import genai
-from config import GEMINI_API_KEY
+import streamlit as st
+
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 from github_search import search_github
 
 # -----------------------------
