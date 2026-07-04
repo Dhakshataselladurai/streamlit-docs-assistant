@@ -19,8 +19,5 @@ Thumbs.db
 # VS Code
 .vscode/
 
-# ChromaDB (optional)
-chroma_db/
-
 # Large generated data (optional)
 data/docs/streamlit_docs.json
