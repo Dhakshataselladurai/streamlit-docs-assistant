@@ -1,5 +1,7 @@
 import requests
-from config import GITHUB_TOKEN
+import streamlit as st
+
+GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
 
 OWNER = "streamlit"
 REPO = "streamlit"
